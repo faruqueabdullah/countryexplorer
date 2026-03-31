@@ -7,8 +7,11 @@ A responsive web application that displays country information by fetching data 
 
 📌 Features
 🌎 Browse countries by region
+
 📦 Fetch data dynamically using API
+
 ⚡ Optimized data fetching using Promise.all
+
 🧾 Display country details in card format
 🔍 Search and filter functionality (if you added it)
 📱 Fully responsive design
