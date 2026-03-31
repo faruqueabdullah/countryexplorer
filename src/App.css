@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+body {
+  font-family: Nunito, sans-serif;
+}
+
+
+
+/* 
+.search-container input::placeholder {
+  color: #999;
+}
+
+
+@media (max-width: 768px) {
+  .countries-container {
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .header-content p {
+    font-size: 12px;
+  }
+
+  .search-filter-container {
+    flex-direction: column;
+  }
+} */
