@@ -35,9 +35,14 @@ Performance using parallel requests
 While building this project, I practiced:
 
 Handling multiple API requests using Promise.all
+
 Managing asynchronous operations in React
+
 State management using useState and useEffect
+
 Working with dynamic data rendering
+
 Error handling in API calls
+
 Writing cleaner and more optimized logic
 
