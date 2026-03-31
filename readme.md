@@ -3,7 +3,7 @@
 A responsive web application that displays country information by fetching data from a public API and presenting it in a clean card-based UI.
 
 🚀 Live Demo
-👉 https://your-live-link.vercel.app
+👉 https://countryexplorer-alpha.vercel.app/
 
 📌 Features
 🌎 Browse countries by region
