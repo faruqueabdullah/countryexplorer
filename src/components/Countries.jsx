@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-// import { data } from "./countriesData";
 import Countrycard from "./Countrycard";
 
 export default function Countries({ query }) {
-  const [countries, setCountries] = useState();
+  const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -24,13 +23,15 @@ export default function Countries({ query }) {
           return res.json();
         });
 
-        const data = await Promise.all(promises);
-        setCountries(data.flat());
-      } catch {
-        (error) => {
-          console.log(error.message)
-          setError(error.message);
-        };
+        const data = await Promise.allSettled(promises);
+
+        const allCountries = data
+          .filter((country) => country.status === "fulfilled")
+          .flatMap((country) => country.value);
+
+        setCountries(allCountries);
+      } catch (error) {
+        setError(error.message);
       } finally {
         setLoading(false);
       }
@@ -39,7 +40,7 @@ export default function Countries({ query }) {
     fetchData();
   }, []);
 
-  const filterCountries = countries?.filter((country) => {
+  const filterCountries = countries.flat().filter((country) => {
     return (
       country.name.common.toLowerCase().includes(query.toLowerCase()) ||
       country.region.includes(query) ||
@@ -56,7 +57,7 @@ export default function Countries({ query }) {
     : 0;
 
   if (loading) {
-    return <h1 class="loading-text">Loading...</h1>;
+    return <h1 class="w-full text-center">Loading...</h1>;
   }
   if (error) {
     return <h2>{error}</h2>;
@@ -70,10 +71,10 @@ export default function Countries({ query }) {
       {
         <div className="countries-container max-w-300 mx-auto mt-4 flex flex-wrap justify-between gap-16 md:justify-between sm:justify-center relative z-10">
           {filterCountries.map((country) => {
-            // console.log(country.name.common)
+            // console.log(country.flag)
             return (
               <Countrycard
-                key={country.name.common}
+                key={country.flag}
                 name={country.name.common}
                 flag={country.flags.svg}
                 capital={country.capital?.[0]} // added ? in case some countries don't have capital
