@@ -18,7 +18,7 @@ export default function Countrydetail() {
     fetch(`https://restcountries.com/v3.1/name/${params.country}`)
       .then((res) => res.json())
       .then(([data]) => {
-        // console.log(data);
+        console.log(data);
         setcountryData({
           name: data.name.common,
           nativeName: Object.values(data.name.nativeName)[0].common,
@@ -56,7 +56,7 @@ export default function Countrydetail() {
 
   return countryData === null ? (
     <main
-      className={`${isdark ? "bg-gray-900 text-white" : "bg-white text-gray-900"} `}
+      className={`${isdark ? "bg-gray-900 text-white" : "bg-white text-gray-900"}  h-[calc(100vh-72px)]`}
     >
       <div className={` max-w-300 h-[calc(100vh-72px) mx-auto py-8 px-5`}>
         <ShimmerEffect />
@@ -118,7 +118,7 @@ export default function Countrydetail() {
                 <b>Border Countries: </b>&nbsp;
                 {newborder.map((border) => (
                   <Link
-                    className="py-1 px-4 shadow rounded-sm text-sm"
+                    className="py-1 px-4 shadow shadow-gray-400 rounded-sm text-sm"
                     key={border}
                     to={`/${border}`}
                     onClick={() => {

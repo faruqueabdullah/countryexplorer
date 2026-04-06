@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <main className={`${isdark ? "text-white bg-gray-900" : " bg-white text-gray-900"} min-h-screen p-4`}>
-      <div className=" max-w-300 sticky top-0 left-0 bg-inherit z-50 mx-auto pt-4 pb-12 flex flex-col md:flex-row md:justify-between items-center">
+      <div className=" max-w-300 sticky top-0 left-0 bg-inherit z-50 mx-auto pt-4 pb-12 flex flex-col sm:flex-row md:justify-between items-center">
         <Searchcountry setQuery={setQuery} />
         <Filtercountry setQuery={setQuery} isdark={isdark}/>
       </div>
