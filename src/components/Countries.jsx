@@ -65,11 +65,11 @@ export default function Countries({ query }) {
 
   return (
     <>
-      <div className="max-w-300 mx-auto font-semibold mb-7.5 relative z-10">
+      <div className="max-w-300 mx-auto text-center sm:text-left font-semibold mb-7.5 relative z-10">
         Number of countries found : {numberofcountriesfound}
       </div>
       {
-        <div className="countries-container max-w-300 mx-auto mt-4 flex flex-wrap justify-between gap-16 md:justify-between sm:justify-center relative z-10">
+        <div className="countries-container max-w-300 mx-auto mt-4 flex flex-wrap justify-center gap-16 md:justify-between relative z-10">
           {filterCountries.map((country) => {
             // console.log(country.flag)
             return (
