@@ -56,7 +56,7 @@ export default function Countrydetail() {
 
   return countryData === null ? (
     <main
-      className={`${isdark ? "bg-gray-900 text-white" : "bg-white text-gray-900"}  h-[calc(100vh-72px)]`}
+      className={`${isdark ? "bg-gray-900 text-white" : "bg-white text-gray-900"}  min-h-[calc(100vh-72px)]`}
     >
       <div className={` max-w-300 h-[calc(100vh-72px) mx-auto py-8 px-5`}>
         <ShimmerEffect />
@@ -64,7 +64,7 @@ export default function Countrydetail() {
     </main>
   ) : (
     <main
-      className={`${isdark ? "bg-gray-900 text-white" : "bg-white text-gray-900"} h-[calc(100vh-72px)] `}
+      className={`${isdark ? "bg-gray-900 text-white" : "bg-white text-gray-900"} min-h-[calc(100vh-72px)] `}
     >
       <div className={`max-w-300 mx-auto py-8 px-5`}>
         <span
