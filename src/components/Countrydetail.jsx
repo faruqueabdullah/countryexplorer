@@ -18,7 +18,7 @@ export default function Countrydetail() {
     fetch(`https://restcountries.com/v3.1/name/${params.country}`)
       .then((res) => res.json())
       .then(([data]) => {
-        console.log(data);
+        // console.log(data);
         setcountryData({
           name: data.name.common,
           nativeName: Object.values(data.name.nativeName)[0].common,
